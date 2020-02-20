@@ -4,12 +4,12 @@ const util = require('util');
 require('dotenv').config();
 
 const app = require('./config/express');
-const router = require('./controllers/thing.js');
+const router = require('./controllers/index.js');
 
 mongoose.Promise = Promise;
 
 // connect to mongo db
-const mongoUri = process.env.MONGO_HOST;
+const mongoUri = "mongodb://localhost:27017/auth-api-starterpack";
 mongoose.connect(
   mongoUri,
   { server: { socketOptions: { keepAlive: 1 } } }
@@ -23,12 +23,13 @@ mongoose.connection.on('error', () => {
 // Routes
 app.use(router);
 
+
 // module.parent check is required to support mocha watch
 // src: https://github.com/mochajs/mocha/issues/1912
 if (!module.parent) {
   // listen on port config.port
-  app.listen(process.env.PORT, () => {
-    console.info(`server started on port ${process.env.PORT} (${process.env.NODE_ENV})`); // eslint-disable-line no-console
+  app.listen(4040, () => {
+    console.info(`server started on port 4040 (development)`); // eslint-disable-line no-console
   });
 }
 

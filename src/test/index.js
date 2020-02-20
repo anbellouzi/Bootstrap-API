@@ -2,6 +2,8 @@ const app = require("../index.js");
 const mongoose = require('mongoose');
 const chai = require('chai'); // eslint-disable-line import/newline-after-import
 const chaiHttp = require("chai-http");
+var assert = require('assert');
+
 
 chai.config.includeStack = true;
 
@@ -20,4 +22,19 @@ after((done) => {
 
 describe('## Index', () => {
   // TODO: Implement tests.
+  it('should load homepage', function(done) {
+    chai.request(app)
+    .get('/component')
+    .then(function(res) {
+      assert.equal(res.status, 200);
+      // console.log("res.status")
+      // console.log(res)
+      console.log("res.body.message")
+      console.log(res.body)
+      return done()
+    })
+    .catch(function(err) {
+      return done(err)
+    })
+  })
 });
