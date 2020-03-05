@@ -69,10 +69,10 @@ Data will look like:
 ```json
 [
     {
-        name: 'navbar',
-        html: ' <nav class="navbar navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
-                </nav>',
+        "name": "navbar",
+        "html": " <nav class='navbar navbar-light bg-light'>
+                <a class='navbar-brand' href='#'>Navbar</a>
+                </nav>",
     }
 ]
 ```
@@ -109,5 +109,4 @@ r = requests.post(url = API_ENDPOINT, data = data)
 response = r.text 
 print("Response:%s"%response) 
 
-```
 
