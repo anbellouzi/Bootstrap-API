@@ -22,7 +22,7 @@ npm start
 
 ## GET html starter code (doctype, navbar, footer)
 
-Send a GET request to URL `https://bootstrap-component.herokuapp.com/starter` to get navbar component 
+Send a GET request to URL `https://bootstrap-component.herokuapp.com/navbar` to get navbar component 
 
 Data will look like: 
 
@@ -53,10 +53,10 @@ Data will look like:
 
 ```json
 [
-    { "name": "starter" },
-    { "name": "navbar" },
-    { "name": "footer" },
-    { "name": "carousel" },
+    { "name": "starter", "html": "<html> ... </html>"},
+    { "name": "navbar", "html": "<html> ... </html>"},
+    { "name": "footer", "html": "<html> ... </html>"},
+    { "name": "carousel", "html": "<html> ... </html>"},
 ]
 ```
 
