@@ -60,7 +60,7 @@ Data will look like:
 ]
 ```
 
-## GET html component Ex. navbar
+## GET single html component Ex. navbar
 
 Send a GET request to URL `https://bootstrap-component.herokuapp.com/navbar` to get navbar component 
 
@@ -115,11 +115,11 @@ print("Response:%s"%response)
 
 ## Sign up
 
-Send a POST request to URL `https://bootstrap-component.herokuapp.com/component/add` to save footer component to API 
+Send a POST request to URL `https://bootstrap-component.herokuapp.com/sign-up` to sign up for a user account 
 
 ``` py
 
-API_ENDPOINT = "https://bootstrap-component.herokuapp.com/component/add"
+API_ENDPOINT = "https://bootstrap-component.herokuapp.com/sign-up"
   
 ### your API key here 
 API_KEY = "XXXXXXXXXXXXXXXXX"
@@ -140,6 +140,51 @@ r = requests.post(url = API_ENDPOINT, data = data)
 response = r.text 
 print("Response:%s"%response) 
 
+```
 
+## Login
 
+Send a POST request to URL `https://bootstrap-component.herokuapp.com/login` to sign in to user account
 
+``` py
+
+API_ENDPOINT = "https://bootstrap-component.herokuapp.com/login"
+  
+### your API key here 
+API_KEY = "XXXXXXXXXXXXXXXXX"
+
+# your source code here 
+user =  {
+    username: 'YOUR-USERNAME',
+    password: "YOUR-PASSWORD'
+}
+  
+### data to be sent to api 
+data = {'component':user,} 
+  
+# sending post request and saving response as response object 
+r = requests.post(url = API_ENDPOINT, data = data) 
+  
+# extracting response text  
+response = r.text 
+print("Response:%s"%response) 
+
+```
+
+## Logout
+
+Send a POST request to URL `https://bootstrap-component.herokuapp.com/logout` to logout of user account
+
+``` py
+
+API_ENDPOINT = "https://bootstrap-component.herokuapp.com/logout"
+  
+### your API key here 
+API_KEY = "XXXXXXXXXXXXXXXXX"
+  
+# sending post request and saving response as response object 
+r = requests.post(url = API_ENDPOINT) 
+  
+# extracting response text  
+response = r.text 
+print("Response:%s"%response) 
