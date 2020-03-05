@@ -22,7 +22,7 @@ npm start
 
 ## GET html starter code (doctype, navbar, footer)
 
-Send a GET request to URL `localhost:3000/starter` to get navbar component 
+Send a GET request to URL `https://bootstrap-component.herokuapp.com/starter` to get navbar component 
 
 Data will look like: 
 
@@ -47,7 +47,7 @@ Data will look like:
 
 ## List of All Components
 
-Send a GET request to URL `localhost:3000/components` to get a list of components
+Send a GET request to URL `https://bootstrap-component.herokuapp.com/components` to get a list of components
 
 Data will look like: 
 
@@ -62,7 +62,7 @@ Data will look like:
 
 ## GET html component Ex. navbar
 
-Send a GET request to URL `localhost:3000/navbar` to get navbar component 
+Send a GET request to URL `https://bootstrap-component.herokuapp.com/navbar` to get navbar component 
 
 Data will look like: 
 
@@ -79,7 +79,8 @@ Data will look like:
 
 ## POST html component Ex. footer
 
-Send a POST request to URL `localhost:3000/component/add` to save footer component to API 
+Send a POST request to URL `https://bootstrap-component.herokuapp.com/component/add` to save footer component to API 
+
 
 ``` py
 ### defining the api-endpoint  
