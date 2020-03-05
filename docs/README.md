@@ -22,7 +22,7 @@ npm start
 
 ## GET html starter code (doctype, navbar, footer)
 
-Send a GET request to URL `https://bootstrap-component.herokuapp.com/navbar` to get navbar component 
+Send a GET request to URL `https://bootstrap-component.herokuapp.com/starter` to get html starter page 
 
 Data will look like: 
 
