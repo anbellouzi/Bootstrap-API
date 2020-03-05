@@ -29,8 +29,8 @@ Data will look like:
 ```json
 [
     {
-        name: 'starter',
-        html: '<!DOCTYPE html>
+        "name": "starter",
+        "html": "<!DOCTYPE html>
                 <html>
                 <head>
                 <title>Page Title</title>
@@ -40,7 +40,7 @@ Data will look like:
                     // body
                     <footer> ... </footer>
                 </body>
-                </html>'
+                </html>"
     }
 ]
 ```
@@ -53,10 +53,10 @@ Data will look like:
 
 ```json
 [
-    { name: 'starter' },
-    { name: 'navbar' },
-    { name: 'footer' },
-    { name: 'carousel' },
+    { "name": "starter" },
+    { "name": "navbar" },
+    { "name": "footer" },
+    { "name": "carousel" },
 ]
 ```
 
@@ -70,7 +70,7 @@ Data will look like:
 [
     {
         "name": "navbar",
-        "html": " <nav class='navbar navbar-light bg-light'>
+        "html": "<nav class='navbar navbar-light bg-light'>
                 <a class='navbar-brand' href='#'>Navbar</a>
                 </nav>",
     }
