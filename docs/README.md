@@ -84,20 +84,20 @@ Send a POST request to URL `https://bootstrap-component.herokuapp.com/component/
 
 ``` py
 ### defining the api-endpoint  
-API_ENDPOINT = "localhost:3000/component/add"
+API_ENDPOINT = "https://bootstrap-component.herokuapp.com/component/add"
   
 ### your API key here 
 API_KEY = "XXXXXXXXXXXXXXXXX"
 
 # your source code here 
 component =  {
-    name: 'footer',
-    html: '
-        <footer class="page-footer font-small blue">
-            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-            </div>
-        </footer>'
+    "name": "footer",
+    "html": "<footer class='page-footer font-small blue'>
+                <div class='footer-copyright text-center py-3'>© 2020 Copyright:
+                    <a href='https://mdbootstrap.com/education/bootstrap/'> MDBootstrap.com</a>
+                </div>
+            </footer>
+            "
 }
   
 ### data to be sent to api 
@@ -109,5 +109,37 @@ r = requests.post(url = API_ENDPOINT, data = data)
 # extracting response text  
 response = r.text 
 print("Response:%s"%response) 
+
+
+```
+
+## Sign up
+
+Send a POST request to URL `https://bootstrap-component.herokuapp.com/component/add` to save footer component to API 
+
+``` py
+
+API_ENDPOINT = "https://bootstrap-component.herokuapp.com/component/add"
+  
+### your API key here 
+API_KEY = "XXXXXXXXXXXXXXXXX"
+
+# your source code here 
+user =  {
+    username: 'YOUR-USERNAME',
+    password: "YOUR-PASSWORD'
+}
+  
+### data to be sent to api 
+data = {'component':user,} 
+  
+# sending post request and saving response as response object 
+r = requests.post(url = API_ENDPOINT, data = data) 
+  
+# extracting response text  
+response = r.text 
+print("Response:%s"%response) 
+
+
 
 
