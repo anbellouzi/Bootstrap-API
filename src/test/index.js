@@ -24,7 +24,7 @@ describe('## Index', () => {
   // TODO: Implement tests.
   it('should load homepage', function(done) {
     chai.request(app)
-    .get('/component')
+    .get('/components')
     .then(function(res) {
       assert.equal(res.status, 200);
       // console.log("res.status")
