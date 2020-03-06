@@ -27,14 +27,11 @@ describe('## Index', () => {
     .get('/components')
     .then(function(res) {
       assert.equal(res.status, 200);
-      // console.log("res.status")
-      // console.log(res)
-      console.log("res.body.message")
-      console.log(res.body)
       return done()
     })
     .catch(function(err) {
       return done(err)
     })
-  })
+  });
+
 });

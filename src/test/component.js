@@ -4,11 +4,12 @@ const chai = require('chai'); // eslint-disable-line import/newline-after-import
 const chaiHttp = require("chai-http");
 const Component = require('../models/component');
 var assert = require('assert');
-
+const User = require("../models/user");
 
 chai.config.includeStack = true;
 
 chai.use(chaiHttp);
+const agent = chai.request.agent(app);
 
 /**
  * root level hooks
@@ -30,22 +31,23 @@ describe('## Component APIs', () => {
     createdAt: '23/23/23',
     updatedAt: '23/23/23',
   };
-
-  it('should load homepage', () => {
+  // TODO: Implement tests.
+  it('should load homepage', function(done) {
     chai.request(app)
-      .get('/components')
-      .end((err, res) => {
-        // if (err) {
-        //   return done(err);
-        // }
-        // console.log(res);
-        if (res) {
-          assert.equal(res.status, 200);
- 
-        }
-        
-        // return done(err);
-      })
+    .get('/components')
+    .then(function(res) {
+      assert.equal(res.status, 200);
+      return done()
+    })
+    .catch(function(err) {
+      return done(err)
+    })
   });
+
+  after(function () {
+    agent.close()
+});
+
+  
 
 });
