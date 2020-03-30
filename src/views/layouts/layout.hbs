@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700%7COswald:400,700">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+  </head>
+  <body>
+    {{> loading }}
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header header-relative">
+        <!-- RD Navbar-->
+        {{> navbar }}
+      </header>
+      <!-- Intro section-->
+      {{> intro }}
+      <!-- About -->
+      {{> about }}
+      <!-- Photo zones-->
+      {{> component }}
+      <!-- Request-->
+      {{> new }}
+      <!-- Why us-->
+      {{> why }}
+      <!-- Gallery -->
+      {{> gallery }}
+      <!-- Order-->
+      {{> how }}
+      <!-- Page Footer-->
+      {{> footer }}
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Modal-->
+    <div class="modal modal-custom fade" id="myModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Complete your order</h3>
+            <div class="modal-subtitle">2x2.5 ft</div>
+            <button class="close mdi mdi-close" type="button" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+              <div class="row row-18 row-fix">
+                <div class="col-xl-12">
+                  <div class="form-wrap">
+                    <label class="form-label" for="modal-name">Name</label>
+                    <input class="form-input" id="modal-name" type="text" name="name" data-constraints="@Required">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-wrap">
+                    <!-- Select 2-->
+                    <select class="form-input select" data-placeholder="Photo zone type" data-constraints="@Required" name="modal-photo-zone-type">
+                      <option label="placeholder"></option>
+                      <option value="2">Compact</option>
+                      <option value="3">Single</option>
+                      <option value="4">Standard</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-wrap">
+                    <!-- Select 2-->
+                    <select class="form-input select" data-placeholder="For rent" data-constraints="@Required" name="modal-rent">
+                      <option label="placeholder"></option>
+                      <option value="2">For rent</option>
+                      <option value="3">For purchase</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-wrap">
+                    <!-- Select 2-->
+                    <select class="form-input select" data-placeholder="With a print" data-constraints="@Required" name="modal-print">
+                      <option label="placeholder"></option>
+                      <option value="2">With a print</option>
+                      <option value="3">Without a print</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-wrap">
+                    <label class="form-label" for="modal-contact-phone">Phone</label>
+                    <input class="form-input" id="modal-contact-phone" type="text" name="phone" data-constraints="@Required @PhoneNumber">
+                  </div>
+                </div>
+              </div>
+              <div class="form-button group-md text-center text-lg-left">
+                <button class="button button-primary" type="submit">Send request</button><span class="price">$300</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- coded by Himic-->
+  </body>
+</html>

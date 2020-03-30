@@ -1,5 +1,8 @@
+const express = require('express');
 const mongoose = require('mongoose');
 const util = require('util');
+var hbs = require('express-handlebars');
+var path = require('path');
 
 require('dotenv').config();
 
@@ -23,6 +26,17 @@ const mongo_uri = process.env.MONGODB_URI
 mongoose.connect(mongo_uri)
 
 // # TODO: Any additional config changes belong here.
+// view engine Setup
+app.engine('hbs', hbs({extname: 'hbs',
+              defaultLayout: 'layout',
+              layoutsDir: __dirname + '/views/layouts/',
+              partialsDir: __dirname + '/views/partials/',
+              }));
+app.set('views', path.join(__dirname, 'views/layouts'));
+app.set('view engine', 'hbs')
+app.use(express.static(path.join(__dirname, "public")));
+
+
 
 // Routes
 app.use(router);
