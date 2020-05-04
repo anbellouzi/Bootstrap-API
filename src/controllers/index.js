@@ -25,4 +25,10 @@ router.get('/', (req, res) => {
 
 })
 
+router.get('/healthcheck', (req,res) => {
+
+    res.sendStatus(200);
+})
+
+
 module.exports = router;
