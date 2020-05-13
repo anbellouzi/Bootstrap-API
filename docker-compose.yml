@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+    
+    web:
+        image: docker-bootstrap-api
+        build: .
+        command: node src/index.js
+        ports: 
+            - "4040:4040"
+        volumes: 
+            - ./bootstrap-api/app
+            - /app/node_modules
+        depends_on:
+            - mongodb
+
+    mongodb:
+        image: "mongo"
+        ports:
+            - "27017:27017"
+
+        
+
+
+        

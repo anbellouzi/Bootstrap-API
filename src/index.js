@@ -23,7 +23,14 @@ const mongo_uri = process.env.MONGODB_URI
 // });
 
 
-mongoose.connect(mongo_uri)
+mongoose.connect(mongo_uri,
+  { useNewUrlParser: true },
+  function(err, db) {
+    console.log("Connected successfully to database");
+
+    // db.close(); turn on for testing
+  }
+);
 
 // # TODO: Any additional config changes belong here.
 // view engine Setup
