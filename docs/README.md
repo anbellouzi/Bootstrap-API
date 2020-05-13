@@ -1,6 +1,6 @@
-# Bootstrap HTML API
+# Bootstrap API
 
-> [Live demo](https://bootstrap-component.herokuapp.com/)
+> [Live demo here](https://bootstrap-component.herokuapp.com/)
 
 
 ## Description
