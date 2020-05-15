@@ -1,7 +1,7 @@
-version: '3.7'
+# docker-compose.yml
 
-services:
-    
+version: '3.7'
+services:    
     web:
         image: docker-bootstrap-api
         build: .
@@ -13,13 +13,8 @@ services:
             - /app/node_modules
         depends_on:
             - mongodb
-
     mongodb:
         image: "mongo"
         ports:
             - "27017:27017"
-
-        
-
-
-        
+            

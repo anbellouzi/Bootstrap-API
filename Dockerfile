@@ -1,18 +1,17 @@
+# Dockerfile
 # ---- Base Node ----
-FROM node
+FROM node:13.3
 # Create app directory
 WORKDIR /app
-
-# ---- Dependencies ----
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
+#  Copy dependencies
 COPY package.json /app
-
-# install app dependencies including 'devDependencies'
+# install app dependencies
 RUN npm install
-
+# copy project to app
 COPY . .
-
+# open port
 EXPOSE 4040
-# Build react/vue/angular bundle static files
-# RUN npm run build
+# RUN node index.js
 CMD ["node", "index.js"]
+
+
