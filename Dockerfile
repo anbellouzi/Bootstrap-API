@@ -27,6 +27,6 @@ ENV PORT 4040
 EXPOSE 4040
 
 # RUN node index.js
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
 
 
