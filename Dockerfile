@@ -24,7 +24,7 @@ ENV NODE_ENV production
 ENV PORT 80
 
 # open port
-EXPOSE 4040 80
+EXPOSE 4040 
 
 # RUN node index.js
 CMD ["npm", "start"]
