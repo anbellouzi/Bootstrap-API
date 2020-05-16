@@ -21,10 +21,10 @@ COPY ./src/ /app
 ENV NODE_ENV production
 
 # env port
-ENV PORT 4040
+ENV PORT 80
 
 # open port
-EXPOSE 4040
+EXPOSE 4040 80
 
 # RUN node index.js
 CMD ["npm", "start"]
