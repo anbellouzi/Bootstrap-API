@@ -15,7 +15,7 @@ COPY ./package.json /app
 RUN npm install && npm cache clean --force
 
 # copying project 
-COPY ./ /app
+COPY ./src/ /app
 
 # setting env
 ENV NODE_ENV production
