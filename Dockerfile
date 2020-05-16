@@ -3,19 +3,19 @@
 FROM node:13.3
 
 # Create app directory
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /app
 
 # set work directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 #  Copy dependencies
-COPY ./package.json /usr/src/app/
+COPY ./package.json /app
 
 # install app dependencies
 RUN npm install && npm cache clean --force
 
 # copying project 
-COPY ./ /usr/src/app
+COPY ./ /app
 
 # setting env
 ENV NODE_ENV production
