@@ -11,6 +11,7 @@ const router = require('./controllers/index.js');
 
 mongoose.Promise = Promise;
 
+
 // connect to mongo db
 // const mongoUri = "mongodb://localhost:27017/auth-api-starterpack";
 const mongo_uri = process.env.MONGODB_URI
