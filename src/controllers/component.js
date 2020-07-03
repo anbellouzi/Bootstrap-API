@@ -45,6 +45,12 @@ router.delete("/delete/:name", (req, res) => {
   }); 
 })
 
+router.delete("/delete_all", (req, res) => {
+  Component.remove({}, function(err)  {
+    res.json("Successfully deleted all components")
+  })
+});
+
 // update a single component
 router.post("/update/component", (req, res) => {
   console.log("updating .........")
